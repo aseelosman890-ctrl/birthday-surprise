@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A little birthday corner</title>
+<style>
+:root{color-scheme:light dark;--bg:light-dark(#fff7fb,#171219);--ink:light-dark(#2b1e28,#fff1f8);--muted:light-dark(#806978,#cbb8c5);--card:light-dark(#ffffff,#241b23);--line:light-dark(#efdce7,#493541);--pink:light-dark(#e879aa,#ff91bd);--pink2:light-dark(#ffd5e7,#4b2639);}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Georgia,serif}body{background:var(--bg);color:var(--ink)}#app{min-height:100vh;background:var(--bg);overflow:hidden}.wrap{max-width:850px;margin:auto;padding:28px 20px 60px}.top{display:flex;justify-content:space-between;align-items:center;font:600 12px/1.2 system-ui;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}button{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:10px 14px;cursor:pointer;font:600 12px system-ui}.hero{text-align:center;padding:70px 10px 48px;position:relative}.spark{font-size:25px}.hero h1{font-size:clamp(45px,10vw,82px);line-height:.92;margin:18px 0 16px;letter-spacing:-.055em}.hero p{max-width:560px;margin:auto;color:var(--muted);font:400 16px/1.7 system-ui}.name{color:var(--pink)}.card{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:28px;margin:18px 0;box-shadow:0 16px 50px #8f4b6b18}.eyebrow{font:700 11px system-ui;letter-spacing:.18em;text-transform:uppercase;color:var(--pink)}h2{font-size:32px;margin:8px 0 12px}p{line-height:1.75}.memory-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}.memory{min-height:145px;border:1px dashed var(--line);border-radius:20px;padding:18px;background:var(--pink2)}.memory b{display:block;margin-bottom:8px}.reveal{display:none;margin-top:18px;padding:18px;border-radius:18px;background:var(--pink2);line-height:1.7}.reveal.show{display:block;animation:pop .5s ease}.letter{font-size:18px}.signature{text-align:right;font-style:italic;margin-top:20px}.final{text-align:center;padding:45px 10px}.cake{font-size:55px;cursor:pointer;user-select:none}.small{font:13px system-ui;color:var(--muted)}.heart{position:fixed;pointer-events:none;font-size:20px;animation:float 2.5s ease-out forwards;z-index:5}@keyframes float{to{transform:translateY(-220px) rotate(25deg);opacity:0}}@keyframes pop{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}@media(max-width:650px){.memory-grid{grid-template-columns:1fr}.hero{padding-top:52px}.card{padding:22px}}
+</style>
+</head>
+<body>
+<div id="app"><div class="wrap">
+<header class="top"><span>made with too much love ♡</span><button id="musicBtn">♡ little surprise</button></header>
+<section class="hero">
+<div class="spark">✦　♡　✦</div>
+<h1>happy birthday,<br><span class="name">my little kickouta</span></h1>
+<p>I wanted to give you something that says: <i>I remembered.</i><br>So… I made you a tiny corner of the internet.</p>
+</section>
+<section class="card">
+<div class="eyebrow">01 · remember this?</div><h2>Some people arrive quietly…</h2>
+<p>…and somehow become part of chapters you didn't know you needed. You were one of those people for me.</p>
+<div class="memory-grid">
+<div class="memory"><b>🐣 The beginning</b><span>Two people online, one friendship I didn't expect to matter this much.</span></div>
+<div class="memory"><b>🫂 You stayed</b><span>You were there while I was trying to move on, and I will always remember that.</span></div>
+<div class="memory"><b>😭 Us being us</b><span>The random talks, tiny jokes, chaos and moments that made ordinary days softer.</span></div>
+</div>
+</section>
+<section class="card">
+<div class="eyebrow">02 · things I never properly said</div><h2>Thank you.</h2>
+<p>Thank you for listening. Thank you for caring. Thank you for helping me through a chapter when I really needed someone.</p>
+<p>And even if lately things haven't felt exactly the same, that doesn't erase what you meant to me.</p>
+<button id="revealBtn">open one more thing →</button>
+<div id="reveal" class="reveal">If you ever wonder whether I remember the good parts: <b>yes. I do.</b> And today, more than anything, I hope you know that you deserve people who make you feel as loved as you make others feel. ♡</div>
+</section>
+<section class="card">
+<div class="eyebrow">03 · your birthday letter</div>
+<h2>For you, always.</h2>
+<div class="letter">
+<p>Happy birthday, my kickouta. 🥹🎀</p>
+<p>I hope this new year of your life is gentle with you. I hope you laugh until your stomach hurts, find beautiful little reasons to be excited, and meet days that feel lighter than the ones before.</p>
+<p>We may not talk exactly like we used to, but I didn't want your birthday to pass like I forgot. Because I didn't.</p>
+<p>You were important to me. You helped me when I was trying to find my way out of old relationships and old feelings. That's something I will always be grateful for.</p>
+<p>So here's to you — your new chapter, your tiny wins, your big dreams, and all the good things you haven't met yet.</p>
+<div class="signature">with love,<br><b>Aseel ♡</b></div>
+</div>
+</section>
+<section class="final">
+<div class="cake" id="cake">🎂</div><h2>make a wish.</h2><p class="small">tap the cake… I may have hidden one last surprise.</p>
+<div id="finalMsg" class="reveal">SURPRISEEEE 😭💗<br><br>Whatever happens, I hope you never forget how lovable you are. Happy birthday, tiny human. Now go have the prettiest day ever. ✨</div>
+</section>
+</div></div>
+<script>
+const hearts=['♡','♥','✦','🎀','💗','✨'];
+function burst(x,y){for(let i=0;i<18;i++){const s=document.createElement('span');s.className='heart';s.textContent=hearts[Math.floor(Math.random()*hearts.length)];s.style.left=(x+(Math.random()-.5)*100)+'px';s.style.top=(y+(Math.random()-.5)*30)+'px';s.style.animationDelay=(Math.random()*.35)+'s';document.body.appendChild(s);setTimeout(()=>s.remove(),3000)}}
+document.getElementById('revealBtn').onclick=()=>{document.getElementById('reveal').classList.add('show');burst(innerWidth/2,innerHeight/2)};
+document.getElementById('cake').onclick=()=>{document.getElementById('finalMsg').classList.add('show');burst(innerWidth/2,innerHeight*.78)};
+document.getElementById('musicBtn').onclick=()=>{alert('No copyrighted music hiding here 😭 — but consider this your cue to play HER favorite song while she reads this ♡')};
+</script>
+</body></html>
